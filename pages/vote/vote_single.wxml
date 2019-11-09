@@ -1,0 +1,40 @@
+<scroll-view scroll-y="true" class='container'>
+  <view class="top">
+    <view class='titlecontent'>
+      <view class='title'>
+        {{vote.title}}
+      </view>
+    </view>
+  </view>
+
+  <view class='cpart'>
+    <view class='pcontent'>
+      <view wx:if="{{ty=='1'}}" class='sign sign_ok'>同意</view>
+      <view wx:if="{{ty=='-1'}}" class='sign sign_reject'>否决</view>
+      <view wx:if="{{ty=='0'}}" class='sign sign_waiver'>弃权</view>
+      {{vote.content}}
+
+    </view>
+
+  </view>
+
+
+
+  <view class='bottoms'>
+    <view class='ok' hover-class='ok_s' data-ty='1' bindtap='bind_sub'>
+      同意
+    </view>
+    <view class='rejectbox'>
+      <view class='notok' hover-class='notok_s' data-ty='-1' bindtap='bind_sub'>
+        不同意
+      </view>
+      <view class='notok' style='background-color:DodgerBlue;' bindtap='bind_sub' data-ty='0' hover-class='waiver_s'>
+        弃权
+      </view>
+
+    </view>
+  </view>
+
+
+
+</scroll-view>

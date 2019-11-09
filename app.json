@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/yibao/index",
+    "pages/tijian/index",
+    "pages/index/index",
+    "pages/index/sign",
+    "pages/news/news",
+    "pages/mine/mineindex",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#7acfa6",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "山东大学信息服务",
+    "backgroundColor": "#7acfa6",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#7f848a",
+    "selectedColor": "#7acfa6",
+    "backgroundColor": "#f7f6fb",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon/index.png",
+        "selectedIconPath": "image/icon/index@active.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "资讯",
+        "iconPath": "image/icon/news.png",
+        "selectedIconPath": "image/icon/news@active.png"
+      },
+      {
+        "pagePath": "pages/mine/mineindex",
+        "text": "个人",
+        "iconPath": "image/icon/more.png",
+        "selectedIconPath": "image/icon/more@active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

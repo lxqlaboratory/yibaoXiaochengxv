@@ -1,0 +1,226 @@
+/* pages/meeting/tdapply.wxss */
+
+.screenbox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.6);
+
+  z-index: 9;
+
+}
+
+.submitall{
+  margin-left: 15px;
+  margin-right: 15px;
+
+  background-color: #66cdaa;
+  color:white;
+  font-size: 17px;
+  margin-top: 35px;
+}
+.timenode{
+ word-break: break-all;
+  width: 215px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px #ddd;
+}
+.bt_submit{
+  position: absolute;
+  bottom: 1%;
+  right:3%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: Green;
+  min-width:35%; 
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+.divline{
+  margin: 10px;
+  height: 1px;
+  width: 95%;
+  background-color: whitesmoke;
+}
+.timeline{
+  padding-top: 10px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: flex-end;
+ 
+  border-radius: 15px 0 0 15px;
+  
+  position: absolute;
+  height: 98%;
+  top:2%;
+  right:0;
+  width: 60%;
+  background-color:rgba(255,255,255,0.5);
+ 
+}
+.timetext{
+  margin: 5px;
+  font-size: 18px;
+  color: Blue;
+  text-align: left;
+  width: 85%;
+}
+.timetextred{
+    color: OrangeRed;
+}
+.head{
+  margin-top: 15px;
+ 
+}
+
+.head picker{
+  background-color: white;
+ 
+  line-height: 45px;
+  height: 45px;
+  padding-left:15px;
+  padding-right: 35px; 
+
+ 
+}
+.curdate{
+  color: black;
+  
+}
+picker .ppp{
+ display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.selectroom{
+  border-top: 1px solid whitesmoke;
+  background-color: white;
+  padding: 15px;
+}
+
+.roomlist{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.ss{
+   background-color: orangered !important;
+    color: white;
+}
+.sss{
+    background-color: DodgerBlue !important;
+    color: white;
+}
+.lparthead{
+  background-color: white;
+  padding: 6px;
+}
+.table{
+  margin-top: 5px;
+}
+input{
+  font-size: 14px;
+  color: black;
+}
+.declare-context-textarea{
+  box-sizing: border-box;
+  padding: 15px;
+  width: 100%;
+
+color: black;
+  margin-top: 5px;
+  border-top: 1px solid whitesmoke;
+  background-color: white;
+  min-height: 200rpx;
+}
+.title{
+  font-size: 14px;
+  margin-right: 15px;
+}
+.inputitem{
+  border-top: 1px solid whitesmoke;
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.lparthead .reselect_s{
+  color: whitesmoke !important;
+  background-color:MediumSeaGreen !important;
+}
+.lparthead .reselect{
+  color: white;
+  background-color: #66cdaa;
+  height: 32px;
+  width: 64px;
+  font-size: 14px;
+  line-height: 32px;
+  box-shadow: 1px 2px 3px #ddd;
+  border-radius: 5px;
+  text-align: center;
+
+
+}
+.sbr{
+  background-color: #66cdaa;
+  color:white;
+  font-size: 17px;
+  margin-top: 15px;
+
+}
+.roomitem{
+ 
+  margin: 10px;
+  height: 85px;
+  width: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px #ddd;
+  background-color: lightgray;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+
+}
+.signlist{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+}
+.signitem{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.signcolor{
+  border-radius: 5px;
+  border:1px solid gray;
+
+  height: 16px;
+  width: 23px;
+  margin-right: 4px;
+
+}

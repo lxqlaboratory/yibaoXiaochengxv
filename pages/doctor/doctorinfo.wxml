@@ -1,0 +1,273 @@
+<scroll-view class="container" scroll-y="true">
+  <view class='cont'>
+    <view class='infopart_1'>
+      <view class="parttitle {{binds['baseform']?'parttitle_s':''}}" bindtap='bind_part' data-id='baseform' >
+        <view class='left'>
+          <view class='lefti'></view>
+          <view>基本信息</view>
+        </view>
+        <image class="arrow {{binds['baseform']?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+      </view>
+      <view class="infocontent {{binds['baseform']?'infocontent_s':''}}" >
+        <view class='infoitem'>
+          <view class="itemtitle">姓名</view>
+          <view class="itemvalue">{{baseform.stuName}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">性别</view>
+          <view class="itemvalue">{{baseform.gender}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">出生年月</view>
+          <view class="itemvalue">{{baseform.birthDate}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">学院</view>
+          <view class="itemvalue">{{baseform.college}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">申请时间</view>
+          <view class="itemvalue">{{baseform.applyTime}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">是否硕博连读</view>
+          <view class="itemvalue">{{baseform.masterDoctor}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">申请学科(专业)</view>
+          <view class="itemvalue">{{baseform.applySubject}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">博士研究生入学年月</view>
+          <view class="itemvalue">{{baseform.entrYearMon}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">导师姓名</view>
+          <view class="itemvalue">{{baseform.tutorName}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">完成本论文导师所支付费用</view>
+          <view class="itemvalue">{{baseform.thesisFee}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">博士学位论文题目</view>
+          <view class="itemvalue">{{baseform.thesisTitle}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">论文工作起止日期</view>
+          <view class="itemvalue">{{baseform.startEndDate}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">本科毕业学校专业及时间</view>
+          <view class="itemvalue">{{baseform.bachelorGradSchool}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">所获学士学位时间、门类</view>
+          <view class="itemvalue">{{baseform.getBachelorDateSubject}}</view>
+        </view>
+
+        <view class='infoitem'>
+          <view class="itemtitle">硕士毕业学校专业</view>
+          <view class="itemvalue">{{baseform.masterGradSchool}}</view>
+        </view>
+        <view class='infoitem'>
+          <view class="itemtitle">所获硕士学位时间、门类</view>
+          <view class="itemvalue">{{baseform.getMasterDateSubject}}</view>
+        </view>
+
+
+      </view>
+    </view>
+
+    <view class='infopart'>
+      <view class="parttitle {{binds['course']?'parttitle_s':''}}" bindtap='bind_part' data-id='course' >
+        <view class='left'>
+          <view class='lefti'></view>
+          <view>学位课程成绩</view>
+        </view>
+        <image class="arrow {{binds['course']?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+      </view>
+      <view class="infocontent {{binds['course']?'infocontent_n':''}}">
+        <view wx:for="{{course}}" class='infoitem'>
+          <view class="itemtitle">{{item.courseName}}</view>
+          <view class="itemvalue">{{item.grade}}分</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='infopart'>
+      <view class="parttitle {{binds['lwpy']?'parttitle_s':''}}" bindtap='bind_part' data-id='lwpy' >
+        <view class='left'>
+          <view class='lefti'></view>
+          <view>博士学位论文评阅人</view>
+        </view>
+        <image class="arrow {{binds['lwpy']?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+      </view>
+      <view class="infocontent {{binds['lwpy']?'infocontent_n':''}}">
+        <view class="lwpytitle">
+          <view style='margin-left:5px'>姓名</view>
+          <view style='margin-right:55px'>论文评价等级</view>
+        </view>
+        <view style='width:100%;'  wx:for="{{lwpy}}"  >
+          <view class="infoitem {{binds['lwpy_'+index]?'parttitle_s':''}}" catchtap='bind_part' data-id='lwpy_{{index}}'>
+            <view class="itemtitle" style='color:black;'>{{item.auditName}}</view>
+            <view class="lwvalue">
+              <view style='margin-right:40px;'> {{item.level}}</view>
+              <image class="arrow {{binds['lwpy_'+index]?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+            </view>
+          </view>
+          <view class="lwpysss {{binds['lwpy_'+index]?'infocontent_n':''}}">
+            <view class='lwpyitem'>
+              <view class="itemtitle">专业技术职务</view>
+              <view class="itemvalue">{{item.duty}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">是否博导</view>
+              <view class="itemvalue">{{item.isphDTutor}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">工作单位</view>
+              <view class="itemvalue">{{item.workUnit}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">学位论文总体评价结论</view>
+              <view class="itemvalue">{{item.rank}}</view>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+
+    <view class='infopart'>
+      <view class="parttitle {{binds['dbwy']?'parttitle_s':''}}"  bindtap='bind_part' data-id='dbwy' >
+        <view class='left'>
+          <view class='lefti'></view>
+          <view>答辩委员会成员</view>
+        </view>
+        <image class="arrow  {{binds['dbwy']?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+      </view>
+      <view class="infocontent {{binds['dbwy']?'infocontent_n':''}}">
+        <view class="lwpytitle">
+          <view style='margin-left:5px'>姓名</view>
+          <view style='margin-right:55px'>成员身份</view>
+        </view>
+        <view style='width:100%;'>
+          <view class="infoitem {{binds['dbwy_-1']?'parttitle_s':''}}" catchtap='bind_part' data-id='dbwy_-1'>
+            <view class="itemtitle" style='color:black;'>{{baseform.commitMemberName1}}</view>
+            <view class="lwvalue">
+              <view style='margin-right:40px;'> 答辩委员会主席</view>
+              <image class="arrow {{binds['dbwy_-1']?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+            </view>
+          </view>
+          <view class="lwpysss {{binds['dbwy_-1']?'infocontent_n':''}}">
+            <view class='lwpyitem'>
+              <view class="itemtitle">专业技术职务</view>
+              <view class="itemvalue">{{baseform.commitMemberTitle1}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">所属单位</view>
+              <view class="itemvalue">{{baseform.belongUnit1}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">是否博导</view>
+              <view class="itemvalue">{{baseform.isDoctorTutor1}}</view>
+            </view>
+
+          </view>
+        </view>
+
+        <view style='width:100%;' wx:for="{{dbwy}}">
+         <view class="infoitem {{binds['dbwy_'+index]?'parttitle_s':''}}" catchtap='bind_part' data-id='dbwy_{{index}}'>
+            <view class="itemtitle" style='color:black;'>{{item.commitMemberName}}</view>
+            <view class="lwvalue">
+              <view style='margin-right:40px;'> 答辩委员会校内委员</view>
+              <image class="arrow {{binds['dbwy_'+index]?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+            </view>
+          </view>
+          <view class="lwpysss {{binds['dbwy_'+index]?'infocontent_n':''}}">
+            <view class='lwpyitem'>
+              <view class="itemtitle">专业技术职务</view>
+              <view class="itemvalue">{{item.commitMemberTitle}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">所属单位</view>
+              <view class="itemvalue">{{item.belongUnit}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">是否博导</view>
+              <view class="itemvalue">{{item.isDoctorTutor}}</view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='infopart'>
+      <view class="parttitle {{binds['jy']?'parttitle_s':''}}" bindtap='bind_part' data-id='jy' >
+        <view class='left'>
+          <view class='lefti'></view>
+          <view>博士学位论文答辩委员会决议</view>
+        </view>
+        <image class="arrow {{binds['jy']?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+      </view>
+      <view class="jy" wx:if="{{binds['jy']}}">
+        {{baseform.auditResult}}
+      </view>
+      <view class='infoitem' wx:if="{{binds['jy']}}">
+        <view class="itemtitle">答辩委员会对学位论文及答辩情况总体评价</view>
+        <view class="itemvalue">{{baseform.result}}</view>
+      </view>
+    </view>
+
+     <view class='infopart'>
+      <view class="parttitle {{binds['lw']?'parttitle_s':''}}" bindtap='bind_part' data-id='lw' >
+        <view class='left'>
+          <view class='lefti'></view>
+          <view>在学期间主要学术成果</view>
+        </view>
+        <image class="arrow {{binds['lw']?'arrow_s':''}}" src="/image/icon/arrow_right.png"></image>
+      </view>
+      <view class="infocontent {{binds['lw']?'infocontent_t':''}}">
+   
+        <view style='width:100%;' wx:for="{{lw}}">
+          <view class='infoitem'>
+            <view class="itemtitle" style='color:black;'>(论文){{item.disserName}}</view>
+            <view class="lwvalue">
+             
+             
+            </view>
+          </view>
+          <view class="lwpydetail">
+            <view class='lwpyitem'>
+              <view class="itemtitle">期刊名称</view>
+              <view class="itemvalue">{{item.magazineName}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">发表时间</view>
+              <view class="itemvalue">{{item.publishTime}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">作者位次</view>
+              <view class="itemvalue">{{item.authOrder}}</view>
+            </view>
+            <view class='lwpyitem'>
+              <view class="itemtitle">论文级别</view>
+              <view class="itemvalue">{{item.disserKind}}</view>
+            </view>
+              <view class='lwpyitem'>
+              <view class="itemtitle">收录情况</view>
+              <view class="itemvalue">{{item.embodyInfo}}</view>
+            </view>
+            
+
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+
+  </view>
+</scroll-view>

@@ -1,0 +1,59 @@
+<scroll-view scroll-y="true" class='container'>
+  <view class="top">
+    <view class='titlecontent'>
+      <view class='title'>
+        {{info.title}}
+      </view>
+      <view class='content'>
+       {{info.descri}}
+      </view>
+      <view class='timedur' wx:if="{{!info.idGroup}}">
+      表决时间： {{info.timedur}}
+      </view>
+    </view>
+  </view>
+
+  <view class='ctitle'>
+
+    <view>共有{{list.length}}项表决项</view>
+    <!-- <view class='bbox'>
+      <view class="btn_all ok" hover-class='ok_s'>全部同意</view>
+      <view class="btn_all reject" hover-class='reject_s'>全部否决</view>
+      <view class="btn_all waiver" hover-class='waiver_s'>全部弃权</view>
+    </view> -->
+  </view>
+  <view class='cpart'>
+    <view class='voteitem' wx:for="{{list}}" wx:key="id">
+      <view wx:if="{{item.status==1}}" class='sign {{item.show?"sign_animation_show":""}} sign_ok'>
+        同意
+      </view>
+      <view wx:if="{{item.status==-1}}" class='sign {{item.show?"sign_animation_show":""}}  sign_reject'>
+        否决
+      </view>
+      <view wx:if="{{item.status==0}}" class='sign {{item.show?"sign_animation_show":""}}  sign_waiver'>
+        弃权
+      </view>
+      <view class='itemtitle'>
+        {{item.name}}
+      </view>
+      <text class='itemcontent'>
+        {{item.des}}
+      </text>
+      <view class='bbox_item'>
+        <view class="btn_all ok" hover-class='ok_s' bindtap='bind_item' data-id="{{index}}" data-status="{{1}}">同意</view>
+        <view class="btn_all reject" hover-class='reject_s' bindtap='bind_item' data-id="{{index}}" data-status="{{-1}}">否决</view>
+        <view class="btn_all waiver" hover-class='waiver_s' bindtap='bind_item' data-id="{{index}}" data-status="{{0}}">弃权</view>
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class='bottoms'>
+    <view class='submit' bindtap='bind_submit' hover-class='submit_s'>
+      提交
+    </view>
+  </view>
+
+
+</scroll-view>

@@ -1,0 +1,55 @@
+<!--login.wxml-->
+<view class="container">
+
+  <block>
+    <image class="title" src="/image/login/title.png"></image>
+
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="logo" src="/image/login/logo.png"></image>
+        <image class="wave" src="/image/login/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/image/login/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+        <view class="login-form">
+          <view class="input-group {{userid_focus ? 'active' : ''}}">
+            <text class="input-label">帐号</text>
+            <input type="number" id="userid" maxlength="20" placeholder="请输入您的工号或身份证号" bindinput="useridInput" bindfocus="inputFocus" bindblur="inputBlur" />
+          </view>
+         
+          <view class="login-help" bindtap="showHelp">
+            <text>帮助</text>
+            <image class="login-help-img" src="/image/icon/help.png"></image>
+          </view>
+        </view>
+        <view class="confirm-btn" bindtap="bind">
+          <text>确认绑定</text>
+        </view>
+      </view>
+
+      
+
+    </view>
+  </block>
+  <view class="help" id="help" wx:if="{{help_status}}" bindtap="tapHelp">
+        <view class="box">
+          <view class="box-hd">
+            <text class="box-title">帮助</text>
+            <image class="box-close" src="/image/icon/close.png" bindtap="hideHelp"></image>
+          </view>
+          <view class="box-bd">
+            <view class="help-q">1、帐号是什么？</view>
+            <view class="help-a">
+              <text>帐号：您的工号或者您的身份证号码</text>
+ 
+              <text>身份证号码若有需要请使用大写'X'</text>
+            </view>
+            <view class="help-q">2、无法登陆？</view>
+            <view class="help-a">
+              <text>请联系我们</text>
+            </view>
+          </view>
+        </view>
+</view>
+
+</view>

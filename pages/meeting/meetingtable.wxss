@@ -1,0 +1,105 @@
+/* pages/meeting/meetingtable.wxss */
+
+.head {
+  max-height: 10%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 9%;
+}
+
+.selectdate {
+  padding: 5px 15px 5px 15px;
+}
+
+.curdate {
+  color: black;
+}
+
+picker .ppp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+picker {
+  background-color: white;
+  line-height: 48px;
+  height: 48px;
+  padding-left: 15px;
+  padding-right: 35px;
+}
+
+scroll-view {
+  width: 87vw;
+  height: 100%;
+  background-color: white;
+}
+
+.table {
+  box-sizing: border-box;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.rowititle {
+  box-sizing: border-box;
+  color: black;
+  height: 100%;
+}
+
+.rowititle .titleitem {
+  box-sizing: border-box;
+  height: 14vh;
+  width: 13vw;
+  border: 1px solid gray;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+.rowitem {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.roomtitle {
+  box-sizing: border-box;
+  height: 5vh;
+  width: 15vh;
+  border: 0.1vh solid gray;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  line-height: 5vh;
+  text-align: center;
+  font-size: 14px;
+  color: black;
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+
+.roomitem {
+  display: flex;
+  padding-left: 2px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 5vh;
+  font-size: 13px;
+  box-sizing: border-box;
+  height: 14vh;
+  width: 15vh;
+  text-align: center;
+  border: 0.1vh solid gray;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  overflow: hidden;
+}

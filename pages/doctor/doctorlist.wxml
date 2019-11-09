@@ -1,0 +1,27 @@
+<view class="searchtab">
+  <image src="/image/icon/search.png"></image>
+  <input bindinput="bind_search" data-type='college' class='input_college' placeholder='检索学院' placeholder-class='myplaceholder'></input>
+  <input bindinput="bind_search" data-type='stu' class='input_stu' placeholder='检索学生(学号或姓名)' placeholder-class='myplaceholder'></input>
+</view>
+<scroll-view scroll-y="true">
+  <view class='content'>
+    <view class='collegepart'  wx:if="{{item.stuCheckList.length!=0&&!item.ishide}}" wx:for="{{collegeList}}" wx:key="collegeName">
+      <view class='collegetitle'>
+        <view class='tba'></view>
+        <view class='ctitle'>{{item.collegeName}}</view>
+        <view class='tba'></view>
+      </view>
+      <view class='doctoritem' hover-class='part_s' wx:if="{{!stu.ishide}}" bindtap='doctorinfo'  data-id="{{stu.personId}}"hover-stay-time="100" wx:for="{{item.stuCheckList}}" wx:key="personId" wx:for-item="stu">
+ 
+          <image src="/image/icon/sdu.png"></image>
+          <view class='stuinfo'>
+            <view class='stuname'>{{stu.perName}}</view>
+            <view class='stunum'>学号：{{stu.perNum}}</view>
+          </view>
+      
+
+      </view>
+    </view>
+
+  </view>
+</scroll-view>

@@ -1,0 +1,260 @@
+.top {
+  width: 100%;
+}
+
+.container {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.titlecontent {
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px 15px 5px 15px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px 5px 10px 5px;
+  color: black;
+  border-bottom: 1px solid gainsboro;
+}
+
+.content {
+  margin-top: px;
+  text-indent: 2em;
+  font-size: 13px;
+  color: white;
+  line-height: 150%;
+
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cpart {
+  margin-top: 20px;
+  flex-grow: 1;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.voteitem_0 {
+  width: 100%;
+  padding: 5px 15px 5px 15px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.voteitem_1 {
+  width: 100%;
+  padding: 5px 15px 5px 15px;
+  position: relative;
+  background-color:rgb(230, 230, 230);
+  box-sizing: border-box;
+}
+
+.itemtitle_1 {
+    min-height: 30px;
+  display: flex;
+  color: black;
+  font-weight: bold;
+  padding-bottom: 2px;
+  font-size: 14px;
+  border-bottom: 1px solid white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemtitle_0 {
+  min-height: 30px;
+  display: flex;
+  color: black;
+  font-weight: bold;
+  padding-bottom: 2px;
+  font-size: 14px;
+  border-bottom: 1px solid gainsboro;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemcontent {
+  text-indent: 2em;
+  padding-top: 5px;
+}
+
+.ctitle {
+  width: 97%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px 0 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sign {
+  font-size: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 2px 5px 2px 5px;
+  opacity: 0.7;
+  position: relative;
+  transform: rotate(20deg);
+  right: 25px;
+  filter: blur(0.2px);
+  box-shadow: 0 0 5px gray;
+  background-color: white;
+
+}
+.sign_animation_show{
+  animation: scaleDraw 0.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes scaleDraw {
+  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+
+  0% {
+    transform: rotate(20deg) scale(1.6); /*开始为原始大小*/
+    opacity: 0.9;
+  }
+
+  25% {
+    transform: rotate(20deg) scale(1.1); /*放大1.1倍*/
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: rotate(20deg) scale(0.7);
+    opacity: 0.9;
+  }
+
+  75% {
+    transform: rotate(20deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+.sign_ok {
+  border: 2px solid ForestGreen;
+  color: ForestGreen;
+}
+
+.sign_reject {
+  margin-right: 45px;
+  border: 2px solid orangered;
+  color: orangered;
+}
+
+.sign_waiver {
+   margin-right: 94px;
+  border: 2px solid DodgerBlue;
+  color: DodgerBlue;
+}
+
+.bbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.bbox_item {
+  padding: 3px 15px 0px 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btn_t {
+  text-align: center;
+  line-height: 2vh;
+  background-color: ForestGreen;
+  box-shadow: 1px 1px 2px gray;
+  padding: 8px 10px 8px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: white;
+}
+
+.btn_all {
+  text-align: center;
+  line-height: 1.5vh;
+  background-color: ForestGreen;
+  box-shadow: 1px 1px 2px gray;
+  padding: 5px 8px 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: white;
+}
+
+.ok {
+    margin-left: 15px;
+  background-color: MediumSeaGreen;
+}
+
+.ok_s {
+    margin-left: 15px;
+  background-color: SeaGreen !important;
+}
+
+.reject {
+  margin-left: 15px;
+  background-color: OrangeRed;
+}
+
+.reject_s {
+  margin-left: 15px;
+  background-color: Red !important;
+}
+
+.waiver {
+ 
+  background-color: DodgerBlue;
+}
+
+.waiver_s {
+  background-color: RoyalBlue !important;
+}
+
+.bottoms {
+  position: fixed;
+  width: 100%;
+  bottom: 25px;
+}
+
+.submit_s {
+  background-color: SeaGreen !important;
+}
+
+.submit {
+  box-shadow: 2px 2px 5px gray;
+  padding: 8px;
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: LimeGreen;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 20px;
+}

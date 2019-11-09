@@ -1,0 +1,49 @@
+<view class="container">
+  <view class='topcontent'>
+
+    <image class='hassign' wx:if="{{meeting.hassign}}" src="/image/icon/hassign.png"></image>
+    <view class='title'>
+    {{meeting.name}}
+    </view>
+
+    <view class='infoitem'>
+      <image src="/image/icon/time-circle.png"></image>
+      <view>活动时间： {{meeting.timestart}}-{{meeting.timeend}}</view>
+    </view>
+    <view class='infoitem'>
+      <image src="/image/icon/time-circle.png"></image>
+      <view>报名时间：{{meeting.signupstart}} 至 {{meeting.signupend}}</view>
+    </view>
+    <view class='infoitem'>
+      <image src="/image/icon/location.png"></image>
+      <view class="location">{{meeting.address}}</view>
+    </view>
+    <view class='infoitem'>
+      <image src="/image/icon/team.png"></image>
+      <view>{{meeting.pnum}}人已报名</view>
+      <view class='ldes'>（Max {{meeting.maxnum}}人）</view>
+    </view>
+  </view>
+  <view class='divtitle'>活动简介</view>
+
+  <scroll-view scroll-y="true">
+    <view class='meetingcontent'>
+      <text>
+    {{meeting.descri}}
+    </text>
+    </view>
+  </scroll-view>
+
+</view>
+
+
+
+<view class='overscreen' wx:if="{{show_overscreen}}"/>
+
+
+<view class='bottom'>
+  <button open-type="share" class='left_1'>分享</button>
+  <view class='left_2' style='color:white'>更多</view>
+  <view wx:if="{{!meeting.hassign}}" class='right' hover-class='right_s' bindtap='signup'>报名</view>
+  <view wx:else class='right' hover-class='right_s' bindtap='changesign'>修改报名信息</view>
+</view>

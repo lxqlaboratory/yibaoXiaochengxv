@@ -1,0 +1,53 @@
+<view class="container">
+  <view class='head'>
+    <picker value="{{now}}" mode="date" bindchange="bindDateChange" start="{{curdate}}" end="{{durdate}}">
+      <view class='ppp'>
+        <view>
+          选择日期
+        </view>
+        <view class='curdate'>
+          {{now}}
+        </view>
+      </view>
+    </picker>
+  </view>
+
+
+
+
+  <view class='table'>
+
+    <view class='rowititle'>
+      <view class='titleitem' style='height:5vh;background-color:whitesmoke;'>
+
+      </view>
+      <view wx:for="{{timetitle}}" wx:key="*this" class='titleitem' style='background-color:{{index%2==1?"whitesmoke":"white"}};margin-top:{{index==3?"1vh":"0vh"}};'>
+        <view>{{item.s}}</view>
+        <view>~</view>
+        <view>{{item.e}}</view>
+      </view>
+    </view>
+
+    <scroll-view scroll-x="true">
+      <view class='flex_row_start' style='align-items:flex-start;'>
+        <view wx:for="{{timetable}}" wx:key="*this" class="rowitem">
+
+          <view class="roomtitle">
+            {{item.roomname}}
+          </view>
+          <view wx:for="{{item.meetinglist}}" bindtap='activityinfo' data-id='{{meeting.applyid}}' wx:if='{{meeting.status!=-1}}' wx:key="*this" wx:for-item="meeting" wx:for-index="idx" class='roomitem' style='background-color:{{idx%2==1?"whitesmoke":"white"}};margin-top:{{idx=="3"?"1vh":"0vh"}};height:{{14*(meeting.length)}}vh;background-color:{{meeting.color}};color:white;padding:2px;'>
+
+         
+            <view wx:if='{{meeting&&meeting.topic}}'>{{meeting.topic}}</view>
+            <view wx:if='{{meeting}}'>{{meeting.applyer?"("+meeting.applyer+")":""}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+
+
+
+
+</view>

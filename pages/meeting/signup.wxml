@@ -1,0 +1,44 @@
+<form bindsubmit="submitall">
+  <view class='item'>
+    <view class="itemtitle">
+      <text class='ls'>*</text> 身份
+    </view>
+    <picker name="type" bindchange="bindPickerChange" value="{{index}}" range='{{range}}'>
+      <view class="picker">
+        {{range[index]}}
+      </view>
+    </picker>
+  </view>
+
+
+  <view class='item'>
+    <view class="itemtitle">
+      <text class='ls'>*</text> 工(学)号
+    </view>
+    <input value='{{num}}' name="num" type='number'></input>
+  </view>
+
+  <view class='item'>
+    <view class="itemtitle">
+      <text class='ls'>*</text> 姓名
+    </view>
+    <input value='{{name}}' name="name"></input>
+  </view>
+
+  <view class='item'>
+    <view class="itemtitle">
+      <text class='ls'></text>手机号
+    </view>
+    <input value='{{phonenum}}' name="phonenum" type='number'></input>
+  </view>
+
+  <view class='item'>
+    <view class="itemtitle">
+      <text class='ls'></text> 所在学院
+    </view>
+    <input value='{{college}}' name="college"></input>
+  </view>
+
+  <button wx:if="{{!change}}" form-type="submit" hover-class="button_s" hover-start-time="0">立即报名</button>
+  <button wx:else form-type="submit" hover-class="button_s" hover-start-time="0">修改报名信息</button>
+</form>

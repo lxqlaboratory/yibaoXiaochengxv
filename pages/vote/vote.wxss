@@ -1,0 +1,52 @@
+/* pages/vote/vote.wxss */
+
+.container{
+  padding-top: 25px;
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+ 
+  margin-left: 15px;
+}
+
+.des {
+  margin: 15px;
+  box-sizing: border-box;
+}
+
+.voteitem {
+  width: 100%;
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 15px;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 1px 1px 2px grey;
+}
+
+.item_s{
+  background-color: gainsboro;
+}
+.sign_w {
+  background-color: orangered;
+  padding: 5px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+.sign_f{
+  background-color: MediumSeaGreen;
+  padding: 5px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+.titlee{
+  max-width: 75%;
+}

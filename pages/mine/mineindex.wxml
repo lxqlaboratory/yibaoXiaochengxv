@@ -1,0 +1,66 @@
+<!--more.wxml-->
+<view class="container">
+
+  <view class="user-info-box">
+    <block >
+      <view class="user-info">
+        <view class="info-hd">
+          <image class="user-avatar" src="{{userinfo.usericon}}"></image>
+          <view class="user-title">
+            <text class="user-name">{{userinfo.perName}}</text>
+            <text class="user-id">{{userinfo.perNum}}</text>
+          </view>
+        
+        </view>
+        <view class="info-bd" >
+          <view class="info-bd-left">
+            <text class="user-text">年级：{{userinfo.grade}}级</text>
+            <text class="user-text" wx:if="{{userinfo.perTypeCode==1}}">身份：学生</text>
+            <text class="user-text" wx:if="{{userinfo.perTypeCode==2}}">身份：教师</text>
+          </view>
+          <view class="info-bd-right">
+            <text class="user-text">学院：{{userinfo.collegename}}</text>
+            <text class="user-text">专业：{{userinfo.marjorname}}</text>
+          </view>
+        </view>
+   
+      </view>
+      <navigator url="append" class="append-link" wx:if="{{!user.teacher}}">
+        <view class="more-btn">
+          <image class="btn-icon" src="/image/icon/append.png"></image>
+          <text class="btn-text">更多信息</text>
+          <view class="btn-open">
+            <image class="btn-enter" src="/image/icon/enter.png"></image>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  
+  </view>
+
+  <view class="more-list">
+    <navigator url="/pages/more/issues" class="issue-link">
+      <view class="more-btn">
+        <image class="btn-icon" src="/image/icon/issue.png"></image>
+        <text class="btn-text">反馈</text>
+        <view class="btn-open">
+          <image class="btn-enter" src="/image/icon/enter.png"></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="about" class="about-link">
+      <view class="more-btn">
+        <image class="btn-icon" src="/image/icon/about.png"></image>
+        <text class="btn-text">关于</text>
+        <view class="btn-open">
+            <image class="btn-enter" src="/image/icon/enter.png"></image>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <navigator url="/pages/index/sign" class="login-btn">
+    <text >切换绑定</text>
+  </navigator>
+
+</view>

@@ -1,0 +1,81 @@
+  <view class='head'>
+    <picker value="{{now}}" mode="date" bindchange="bindDateChange" start="{{cnow}}" >
+      <view class='ppp'>
+        <view>
+          选择日期
+        </view>
+        <view class='curdate'>
+          {{now}}
+        </view>
+      </view>
+    </picker>
+  </view>
+
+
+  <scroll-view class="main-card-item" scroll-y="true" id="kb">
+
+
+
+    <view class="card-item-bd">
+      <view wx:if="{{meetinglist==undefined||meetinglist.length==0}}" class="kb-item">
+        暂无会议
+      </view>
+
+      <view wx:else style='width:100%;'>
+        <view class='activityitem'  wx:for='{{meetinglist}}' wx:key="applyId" bindtap='activityinfo' data-id='{{item.applyId}}'>
+          <view class='flex_row_between actitle'>
+            <view style='height:100%;' class='flex_row_center'>
+              <image src='/image/icon/append.png'></image>
+              <view class='pfont'>{{item.topic}}</view>
+            </view>
+
+            <view class='deletebutton' data-id='{{item.applyId}}' catchtap='deleteapply'>
+            取消
+            </view>
+          </view>
+          <view class='flex_row_between padding_5px ' style='height:6vh;width:100%;'>
+            <view class='flex_row_center'>
+              <text style='background-color:#66cdaa;color:white;font-size:19px;margin-left:-10px;margin-right:15px;  border-radius: 4px;padding:2px;'>{{item.startTime}}</text>
+           <view class='font_grey' style='color:black;'>
+                <text class='padding_5px' style='background-color:OrangeRed;color:white;margin-right:6px;border-radius:4px;'>会议编号</text>{{item.applyNum}}</view>
+            
+            </view>
+           
+          </view>
+          <view class="flex_row_start padding_5px " style='align-items:left;border-left:4px dashed ; border-color: #66cdaa;margin-left:20px;'>
+            <image src='{{item.creatorinfo.wechatuser.headimgurl}}' style='margin-top:-5px;border-radius:50%;'></image>
+            <view>
+              <view class='font_grey padding_5px flex_row_start' style='margin-left:-10px;'>
+                <view wx:if="{{item.organizer!=undefined}}" style='margin-right:32px;'>
+                  <text class='padding_5px' style='background-color:RoyalBlue;color:white;border-radius:4px;'>组织者</text>
+                  <text class='padding_5px'>{{item.organizer}}</text>
+                </view>
+                <view>
+                  <text class='padding_5px' style='background-color:RoyalBlue;color:white;border-radius:4px;'>申请人</text>
+                  <text wx:if="{{item.applyerName!=undefined}}" class='padding_5px'>{{item.applyerName}}</text>
+                </view>
+
+              </view>
+
+              <view class='infoarea' style='margin-top:8px;margin-left:-5px;'>{{item.brief}}</view>
+
+             
+            </view>
+          </view>
+          <view class='flex_row_start padding_5px ' style='height:6vh;width:100%;margin-left:10px;'>
+            <text style='background-color:orange;color:white;font-size:19px;margin-left:-20px;margin-right:15px;  border-radius: 4px;padding:2px;'>{{item.endTime}}</text>
+            <view class='font_grey' style='color:black;'>
+                <text class='padding_5px' style='background-color:Green;color:white;margin-right:6px;border-radius:4px;'>会议室</text>{{item.meetingRoomInfo.roomName}}</view>
+          </view>
+
+        </view>
+      </view>
+
+
+
+
+
+    </view>
+
+
+  </scroll-view>

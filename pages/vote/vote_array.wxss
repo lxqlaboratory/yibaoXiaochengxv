@@ -1,0 +1,210 @@
+.top {
+  width: 100%;
+
+}
+.titlecontent {
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px 5px 10px 5px;
+  color: black;
+  border-bottom: 1px solid gainsboro;
+}
+.timedur{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 15px 2px 15px;
+}
+
+.content {
+  margin-top: px;
+  text-indent: 2em;
+  font-size: 13px;
+  color: black;
+  line-height: 150%;
+  padding-top: 5px;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cpart {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px 15px 80px 15px;
+}
+
+.voteitem {
+  position: relative;
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 1px DarkGray;
+  border: 1px solid gainsboro;
+  padding: 10px 15px 10px 15px;
+}
+
+.itemtitle {
+  color: black;
+  font-weight: bold;
+  padding-bottom: 5px;
+  font-size: 14px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.itemcontent {
+  text-indent: 2em;
+  padding-top: 5px;
+}
+
+.ctitle {
+  width: 97%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0px 0 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid Gainsboro;
+}
+
+.sign_animation_show{
+  animation: scaleDraw 0.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes scaleDraw {
+  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+
+  0% {
+    transform: rotate(25deg) scale(1.6); /*开始为原始大小*/
+    opacity: 0.9;
+  }
+
+  25% {
+    transform: rotate(25deg) scale(1.1); /*放大1.1倍*/
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: rotate(25deg) scale(0.7);
+    opacity: 0.9;
+  }
+
+  75% {
+    transform: rotate(25deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+.sign {
+  position: absolute;
+  right: -5px;
+  top: 0px;
+  font-size: 24px;
+  transform: rotate(25deg);
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px 15px 10px 15px;
+  opacity: 0.6;
+}
+.sign_ok{
+  border: 4px solid ForestGreen;
+    color: ForestGreen;
+}
+
+.sign_reject {
+  border: 4px solid orangered;
+  color: orangered;
+}
+
+.sign_waiver {
+  border: 4px solid DodgerBlue;
+  color: DodgerBlue;
+}
+
+.bbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bbox_item {
+  padding: 3px 15px 0px 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn_all {
+  text-align: center;
+  line-height: 2vh;
+  background-color: ForestGreen;
+  box-shadow: 1px 1px 2px gray;
+  padding: 7px 10px 7px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: white;
+}
+
+.ok {
+  background-color: MediumSeaGreen;
+}
+
+.ok_s {
+  background-color: SeaGreen !important;
+}
+
+.reject {
+  margin-left: 15px;
+  background-color: OrangeRed;
+}
+
+.reject_s {
+  margin-left: 15px;
+  background-color: Red !important;
+}
+
+.waiver {
+  margin-left: 15px;
+  background-color: DodgerBlue;
+}
+
+.waiver_s {
+  background-color: RoyalBlue !important;
+}
+
+.bottoms {
+  position: fixed;
+  width: 100%;
+  bottom: 25px;
+}
+
+.submit_s {
+  background-color: SeaGreen !important;
+}
+
+.submit {
+  box-shadow: 2px 2px 5px gray;
+  padding: 8px;
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: LimeGreen;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 20px;
+}

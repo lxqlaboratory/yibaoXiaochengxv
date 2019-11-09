@@ -1,0 +1,149 @@
+.title {
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+  padding: 3%;
+}
+
+.container {
+  height: 92%;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.hassign {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  height: 80px;
+  width: 90px;
+}
+
+.topcontent {
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.left_s {
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.infoitem {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 13px;
+  color: black;
+  padding: 1% 4% 1% 4%;
+}
+
+.infoitem image {
+  height: 2em;
+  width: 2em;
+  padding: 0px 7px 0px 0px;
+}
+
+.location {
+  color: #1296db;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8%;
+  background-color: white;
+  border-top: 1px solid gainsboro;
+  box-shadow: -2px -1px 5px 1px gainsboro;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+button::after {
+   border: none;
+}
+.bottom .left_1 {
+  line-height: 200%;
+  width: 25%;
+  box-sizing: border-box;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  background: none;
+  border: none;
+  background-color: #fff;
+}
+
+.bottom .left_2 {
+
+  line-height: 200%;
+  width: 25%;
+  box-sizing: border-box;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+.bottom .right {
+  width: 50%;
+  background: -webkit-linear-gradient(left, rgba(255, 68, 0, 0.733), orange);
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+}
+
+.bottom .right_s {
+  background: -webkit-linear-gradient(right, rgba(255, 68, 0, 0.733), orange) !important;
+}
+
+.overscreen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.533);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ldes {
+  padding-left: 1%;
+  color: gray;
+}
+
+.divtitle {
+  height: 35px;
+  background-color: WhiteSmoke;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.meetingcontent {
+  margin-top: -15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  line-height: 200%;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+scroll-view {
+  height: 40%;
+  flex: 1;
+}

@@ -1,0 +1,108 @@
+<view class="container">
+  <view class="tpart" wx:if="{{showtpart}}">
+    <view class='head'>
+      <picker value="{{now}}" mode="date" bindchange="bindDateChange" start="{{curdate}}" end="{{durdate}}">
+        <view class='ppp'>
+          <view>
+            选择日期
+          </view>
+          <view class='curdate'>
+            {{now}}
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view class='selectroom'>
+      <view>
+        选择会议室
+      </view>
+      <view class='roomlist'>
+        <view class='roomitem {{item.select?"sss":""}}' bindtap='selectroom' data-id='{{item.roomId}}' wx:for="{{roomlist}}" style='background-color:{{item.status==0?"MediumSeaGreen":""}} {{item.status>0&&item.status<6?"Goldenrod":""}} {{item.status==6?"Coral":""}}'
+          wx:key="roomId">
+          <view class='flex_colum_center'>
+            <view>{{item.roomname}}</view>
+            <view style='font-size:12px;margin-top:10px;'>面积:</view>
+            <view style='font-size:12px;'>座位数:</view>
+          </view>
+        </view>
+
+      </view>
+      <view class='signlist'>
+        <view class='signitem'>
+          <view class='signcolor' style='background-color:Coral'>
+          </view>
+          <view>全满</view>
+        </view>
+        <view class='signitem'>
+          <view class='signcolor' style='background-color:Goldenrod'>
+          </view>
+          <view>可用</view>
+        </view>
+        <view class='signitem'>
+          <view class='signcolor' style='background-color:MediumSeaGreen'>
+          </view>
+          <view>全空</view>
+        </view>
+        <view class='signitem'>
+          <view class='signcolor' style='background-color:DodgerBlue'>
+          </view>
+          <view>选择</view>
+        </view>
+      </view>
+
+
+      <button class='sbr' bindtap='beginupview'>确定</button>
+    </view>
+  </view>
+
+  <view wx:if="{{!showtpart}}" class='flex_row_between lparthead'>
+    <view>
+      {{now}}
+    </view>
+    <view>
+      {{roomnameliststr}}
+    </view>
+    <view class='reselect' hover-class='reselect_s' bindtap='bindreselect'>
+      重选
+    </view>
+  </view>
+  <view wx:if="{{!showtpart}}" class='table'>
+    <view class='inputitem'>
+      <view class='title'> 会议主题</view>
+      <input placeholder="请输入会议主题" bindinput='input_topic'></input>
+    </view>
+
+    <view class='inputitem'>
+      <view class='title'> 会议组织</view>
+      <input placeholder="请输入组织者全称" bindinput='input_oname'></input>
+    </view>
+
+    <textarea class="declare-context-textarea" bindinput='input_brief' placeholder="简述会议内容" auto-height></textarea>
+
+    <view class='inputitem' bindtap='opentimeline' style='margin-top:5px;'>
+      <view class='title'>会议时间</view>
+      <input disabled="true" placeholder="{{stimestr?stimestr:'请选择会议时段'}}"></input>
+    </view>
+
+    <button class='submitall' bindtap='submitall'>确定</button>
+
+  </view>
+
+  <view class='screenbox' bindtap='closetimeline' wx:if="{{showtimeline}}">
+    <view class='timeline' catchtap='noup'>
+      <block wx:for="{{timelist}}" wx:key="*this">
+        <view wx:if='{{index==3}}' class="divline" />
+        <view class='timetext'>{{item.s}}~{{item.e}}</view>
+        <view wx:if="{{!timeorder[index]}}" bindtap='bindnode'  data-id='{{index}}' class="timenode  {{orderlist[index].s?'sss':''}}">
+          {{orderlist[index].s?"选择":"空闲"}}
+        </view>
+        <view wx:else class="timenode" bindtap='alsub' style='color:white;background-color:{{timeorder[index].color}}'>
+          {{ timeorder[index].name+"("+ timeorder[index].apper+")"}}
+        </view>
+      </block>
+    </view>
+    <view class='bt_submit' bindtap='closetimeline'>确定</view>
+
+
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!--news.wxml-->
+<view class="container">
+  <!--新闻分类-->
+  <scroll-view class="filter" scroll-x="true">
+    <block wx:for="{{list}}" wx:key="type">
+        <view class='filter-item' bindtap='changeNewsList' data-type='{{item.type}}' style='background-color:{{item.color}};'>{{item.name}}</view>
+    </block>
+  </scroll-view>
+  
+  <!--新闻列表-->
+  <view class="content">
+    <block wx:for="{{newslist}}"  wx:key="item.urlId">
+      <navigator url="/pages/news/detail?id={{item.urlId}}">
+        <view class="list-item jw" style="background-color:{{colorlist[type]}}">
+          <view class="list-item-left">
+            <text class="list-item-title">{{item.urlTitle}}</text>
+            <text class="list-item-time">{{item.createDate}}</text>
+          </view>
+          <image class="list-item-icon" src="/image/news/jw.png"></image>
+        </view>
+      </navigator>
+    </block>
+  </view>
+ 
+
+</view>

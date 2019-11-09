@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <!--功能导航-->
+  <view class="main-core">
+    <block wx:for="{{core}}" wx:key="id">
+      <navigator wx:if="{{!item.disabled}}" class="main-core-item" url="{{item.navi}}">
+        <image class="core-item-icon" src="/image/indextar/{{item.id}}.png"></image>
+        <text class="core-item-name">{{item.name}}</text>
+      </navigator>
+      <view wx:else class="main-core-item disabled" bindtap="disabled_item">
+        <image class="core-item-icon" src="/image/indextar/{{item.id}}@disabled.png"></image>
+        <text class="core-item-name">{{item.name}}</text>
+      </view>
+    </block>
+
+  </view>
+
+  <view class="card-item-hd">
+    <image class="card-item-icon" src="/image/icon/jh.png"></image>
+    <text class="card-item-name">医保报名通知</text>
+  </view>
+
+  <view class="p-essu">
+    <view wx:for="{{essu}}" wx:key="*this" style="margin-bottom:15px;">
+       {{item}}
+    </view>
+  </view>
+
+
+
+
+
+</view>

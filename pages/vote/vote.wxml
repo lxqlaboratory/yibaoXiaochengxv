@@ -1,0 +1,17 @@
+<view class="container">
+  <view class='title'>{{votegroup.name}}</view>
+  <view class="des">{{votegroup.des}}</view>
+
+  <view class='des' style='color:black;font-weight:bold;'>共{{votegroup.votelist.length}}项表决项</view>
+
+  <view class='voteitem' wx:for="{{votegroup.votelist}}" hover-class='item_s' bindtap='toVote' data-type="{{item.type}}" data-id='{{item.id}}'>
+    <view class="titlee"> {{item.title}}</view>
+
+    <view class='sign_w' wx:if="{{item.status==0}}">未表决</view>
+    <view class='sign_f' wx:else>已表决</view>
+
+   
+  </view>
+
+  <view class='des'> 截止日期:{{votegroup.timeEnd}}</view>
+</view>
